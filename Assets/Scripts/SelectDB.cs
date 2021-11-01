@@ -60,7 +60,6 @@ public class SelectDB : MonoBehaviour
         // connection.Close();
         connection.CloseReader();
     }
-
     public void SetTextValidacao()
     {
         buttonText.text = "Usuário não encontrado";

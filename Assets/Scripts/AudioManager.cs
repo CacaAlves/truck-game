@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /*
  PAULO, ESSA CLASSE GERENCIA O AUDIO DO JOGO (FUNDO E EFEITOS ESPECIAIS)
     OBS: AS FRASES EM AUDIO SÃO GERENCIADAS POR OUTRA CLASSE.
@@ -45,12 +44,14 @@ public class AudioManager : MonoBehaviour
     public void BGToca(int i)
     {
         musicaBG.clip = clips[i];
+        if (!MusicaStates.musicaEstaTocando()) return;
         musicaBG.Play();
     }
 
     public void SonsFXToca(int i)
     {
         sonsFX.clip = clipsFX[i];
+        if (!MusicaStates.musicaEstaTocando()) return;
         sonsFX.Play();
     }
 
@@ -71,6 +72,8 @@ public class AudioManager : MonoBehaviour
             botaooff.SetActive(true);
             botaoon.SetActive(false);
 
+            MusicaStates.PararMusica();
+
         }
         else if (!musicaBG.isPlaying || !sonsFX.isPlaying)
         {
@@ -84,6 +87,8 @@ public class AudioManager : MonoBehaviour
 
             botaooff.SetActive(false);
             botaoon.SetActive(true);
+
+            MusicaStates.TocarMusica();
         }
 
     }
