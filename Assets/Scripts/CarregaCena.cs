@@ -14,13 +14,13 @@ public class CarregaCena : MonoBehaviour
     public void carregaCena(string nomeCena)
     {
         SceneManager.LoadScene(nomeCena);
-
     }
 
     public void carregaCenaFinal()
     {
         int idTema = PlayerPrefs.GetInt("nivel");
-        if (idTema == 9)
+        const int FINAL_LEVEL = 9;
+        if (idTema == FINAL_LEVEL)
         {
             SceneManager.LoadScene("CERTIFICACAOFINAL");
         }

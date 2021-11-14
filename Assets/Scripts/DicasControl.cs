@@ -26,9 +26,7 @@ public class DicasControl : MonoBehaviour
         //panel.enabled = false;
     
     }
-
-
-
+    
     public void setaFrase()
     {
         //Seto Frase na popup de dicas
